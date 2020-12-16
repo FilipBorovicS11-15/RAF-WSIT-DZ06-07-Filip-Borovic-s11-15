@@ -1,0 +1,40 @@
+table {
+    border-collapse: collapse;
+  }
+  table tr td {
+    padding: 5px;
+  }
+  #tabela tr:nth-child(even) {
+    background-color: #c2eafa;
+  }
+  #tabela tr:nth-child(odd) {
+    background-color: #64caf2;
+  }
+  .predavac {
+    cursor: pointer;
+  }
+  .ucionica {
+    cursor: pointer;
+  }
+  #mainTB {
+    float: left;
+    margin-right: 20px;
+  }
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+  a:hover {
+    text-decoration: none;
+    font-weight: bold;
+  }
+  #klik table tr td {
+    border: 1px solid black;
+  }
+  #klik table tr:nth-child(even) {
+    background-color: #cccccc;
+  }
+  #klik table tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  

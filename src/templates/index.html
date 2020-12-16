@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='css.css')}}">
+    <title>Raspored</title>
+</head>
+<body>
+    <h1>Filip Borovic s11/15</h1>
+    <span>Pretraga po predavacu ili predmetu:</span><input type="text" id="pretraga">
+    <br><br>
+    <table border="1" id="tabela">
+        <tr>
+            <td><b>broj</b></td>
+            <td><b>naziv</b></td>
+            <td><b>tip</b></td>
+            <td><b>predavac</b></td>
+            <td><b>ucionica</b></td>
+            <td><b>dan</b></td>
+            <td><b>vreme</b></td>
+            <td><b>grupa</b></td>
+        </tr>
+        {% for i in range(res|length) %}
+            <tr>
+                {% for j in range(res[i]|length) %}
+                    {% if j==3 %}
+                        <td class="predavac"> <a href="#klik">
+                    {% endif %}
+                    {% if j==4 %}
+                        <td class="ucionica"> <a href="#klik">
+                    {% endif %}
+                    {% if j!=3 and j!=4 %}
+                        <td>
+                    {% endif %}
+                    {{res[i][j]}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+
+    <table border="1" id="mainTB">
+        <tr>
+            <td><b>predavac</b></td>
+            <td><b>ucionica</b></td>
+        </tr>
+        {% for i in res2 %}
+            <tr>
+                <td class="predavac"><a href="#klik">{{i[0]}}</a></td>
+                <td class="ucionica"><a href="#klik">{{i[1]}}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+    <br>
+    
+    <div id="klik"></div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='script.js')}}"></script>
+</body>
+</html>

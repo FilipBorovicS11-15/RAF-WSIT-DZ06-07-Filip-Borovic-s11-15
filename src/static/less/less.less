@@ -1,0 +1,68 @@
+@svetlija-plava: #C2EAFA;
+@tamnija-plava: darken(@svetlija-plava, 20%);
+@bela: #fff;
+@siva: darken(@bela, 20%);
+@crna: #000;
+
+.padding (@padding:5px){
+    padding: @padding;
+}
+
+.dekoracija(@dekoracija:none){
+    text-decoration: @dekoracija;
+}
+
+.border (@spajanje:collapse){
+    border-collapse: collapse;
+}
+
+table {
+	.border(collapse);
+	tr {
+		td {
+			.padding;
+		}
+	}
+}
+#tabela {
+	tr {
+		&:nth-child(even) {
+			background-color: @svetlija-plava;
+		}
+		&:nth-child(odd) {
+			background-color: @tamnija-plava;
+		}
+	}
+}
+.predavac {
+	cursor: pointer;
+}
+.ucionica {
+	cursor: pointer;
+}
+#mainTB {
+	float: left;
+	margin-right: 20px;
+}
+a {
+	color: @crna;
+	.dekoracija(none);
+	&:hover {
+		.dekoracija(underline);
+	}
+}
+#klik {
+	table {
+		tr {
+			td {
+				border: 1px solid black;
+			}
+			&:nth-child(even) {
+				background-color: @siva;
+			}
+			&:nth-child(odd) {
+				background-color: @bela;
+			}
+		}
+	}
+}
